@@ -25,11 +25,10 @@ var pacientes = [paciente1, paciente2];*/
 //Bracket Notation
 //paciente["peso"]
 
-//retorna todos os <tr class="paciente"> da página como um array
+//retorna todos os <tr class="paciente"> da página como um array de tr
 var trsPacientes = document.getElementsByClassName("paciente");
 
-var posicaoAtual = 0;
-while(posicaoAtual <= trsPacientes.length - 1){
+for(var posicaoAtual = 0; posicaoAtual <= trsPacientes.length - 1; posicaoAtual++){
 	
 	var pacienteTr = trsPacientes[posicaoAtual];
 	
@@ -46,17 +45,17 @@ while(posicaoAtual <= trsPacientes.length - 1){
 	};
 	
 	if(paciente.altura != 0){
+		
 		var imc = paciente.peso / (paciente.altura * paciente.altura);
 		console.log("IMC: " + imc);
 		
+		//atualiza o IMC de cada paciente
 		var tdImc = pacienteTr.getElementsByClassName("info-imc")[0];
 		tdImc.textContent = imc;
 		
 	}else{
 		console.log("Altura não pode ser igual a zero!");	
 	}
-	
-	posicaoAtual++;
 	
 }
 
