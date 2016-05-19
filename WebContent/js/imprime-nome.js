@@ -1,31 +1,14 @@
 var trsPacientes = document.getElementsByClassName("paciente");
 
+//função imprimeNome recebe seu parâmetro dentro da função
+//em que ela é executada, a percorreArray
+percorreArray(trsPacientes, imprimeNome);
+
+//pode ser criada como função anônima
 function imprimeNome(pacienteTr){
 	
-	var tdNome = pacienteTr.getElementsByClassName("info-nome")[0];
-	var tdPeso = pacienteTr.getElementsByClassName("info-peso")[0];
-	var tdAltura = pacienteTr.getElementsByClassName("info-altura")[0];
-	
-	var pacienteAtual = {
-			nome : tdNome.textContent,
-			peso : tdPeso.textContent,
-			altura : tdAltura.textContent,
-			pegaImc : function(){
-				
-				if(this.altura != 0){
-					
-					var imc = this.peso / (this.altura * this.altura);
-					return imc;
-					
-				}else{
-					console.log("Altura não pode ser igual a zero!");	
-				}
-				
-			}
-	};
+	var pacienteAtual = montaPaciente(pacienteTr);
 	
 	console.log(pacienteAtual.nome);
 	
 };
-
-percorreArray(trsPacientes, imprimeNome);
