@@ -1,7 +1,7 @@
 var botao = document.getElementById("calcula-imcs");
 //botao.onclick = calculaTodosImcs; somente um evento atribuido ao botão
 
-botao.addEventListener("click", function (){
+function calculaImcPaciente(){
 	
 	var trsPacientes = document.getElementsByClassName("paciente");
 	
@@ -17,7 +17,9 @@ botao.addEventListener("click", function (){
 		
 	});
 	
-});
+}
+
+botao.addEventListener("click", calculaImcPaciente);
 
 botao.addEventListener("click", function(){
 	console.log("Calculando imcs...");

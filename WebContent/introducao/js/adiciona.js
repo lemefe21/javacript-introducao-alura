@@ -33,7 +33,9 @@ botaoAdicionar.addEventListener("click", function(event){
 	//sempre pega o primeiro elemento, nessa caso uma tag
 	var tabela = document.querySelector("table");
 	
-	tabela.innerHTML = tabela.innerHTML + pacienteNovo;
+	tabela.innerHTML += pacienteNovo;
+	
+	calculaImcPaciente();
 	
 	inputNome.value = "";
 	inputPeso.value = "";
