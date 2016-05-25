@@ -101,15 +101,16 @@
 					<label for="email">Email</label>
 					<div class="input-group">
 							<span class="input-group-addon">@</span>
-							<input type="text" class="form-control"
-							       id="email" name="email">
+							<input type="email" class="form-control" id="email" name="email">
 					</div>
+							<!-- [a-zA-Z\d_] = \w -->
+							<!-- type="text" pattern="\w+@[a-z]+\.\w+\.?\w*" -->
 				</div>
 
 				<div class="form-group">
 					<label for="cpf">CPF</label>
 					<input type="text" class="form-control" id="cpf" name="cpf"
-					pattern="\d{11}">
+					pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}">
 				</div>
 				<div class="form-group">
 					<label for="telefone">Telefone</label>
