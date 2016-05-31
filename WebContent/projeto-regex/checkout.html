@@ -94,7 +94,11 @@
 
 				<div class="form-group">
 					<label for="nome">Nome completo</label>
-					<input type="text" class="form-control" id="nome" name="nome">
+					<input type="text" class="form-control" id="nome" name="nome" pattern="([A-Z][a-z]+ )*[A-Z][a-z]+">
+					<!-- Palavras devem começar com maiusculas e depois de espaço(opcional) inicia uma outra palavra -->
+					
+					<!-- exer: "ids: \d+(,\d+)*" ids: 1234 ou ids: 1,2,3,12,123-->
+					
 				</div>
 
 				<div class="form-group">
@@ -106,6 +110,9 @@
 							<!-- [a-zA-Z\d_] = \w -->
 							<!-- type="text" pattern="\w+@[a-z]+\.\w+\.?\w*" -->
 							<!-- type="text" pattern="\w+@[a-z]+\.\w+(\.\w+)?" << agrupamento-->
+							
+							<!-- exemplo para login -->
+							<!-- \w+[\w\.]*(@\w+(\.\w+)+)? >> m.salles_86@caelum.com.br ou marco.salles -->
 				</div>
 
 				<div class="form-group">
@@ -116,7 +123,7 @@
 				<div class="form-group">
 					<label for="telefone">Telefone</label>
 					<input type="text" class="form-control" id="telefone" name="telefone"
-					pattern="([1-9][1-9])? ?9? ?\d{4}-?\d{4}" required>
+					pattern="([1-9][1-9])? ?9? ?\d{4}-?\d{4}">
 				</div>
 
 				<div class="checkbox">
@@ -185,7 +192,8 @@
 				<div class="form-group">
 					<label for="numero-cartao">Número</label>
 					<input type="text" class="form-control" 
-					       id="numero-cartao" name="numero-cartao">
+					       id="numero-cartao" name="numero-cartao"
+					       pattern="\d{4}([ -]?\d{4}){3}">
 				</div>
 
 				<div class="form-group">
